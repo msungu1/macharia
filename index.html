@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>A Magical Invitation</title>
+  <style>
+    body {
+      font-family: "Georgia", "Segoe UI", serif;
+      background: linear-gradient(180deg, #fff0f5, #ffe4e1);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      overflow: hidden;
+      position: relative;
+    }
+    /* 🌸 Falling flowers */
+    .flower {
+      position: fixed;
+      top: -50px;
+      font-size: 22px;
+      animation: fall linear infinite;
+      opacity: 0.8;
+      pointer-events: none;
+      z-index: 1;
+    }
+    @keyframes fall {
+      to {
+        transform: translateY(110vh) rotate(360deg);
+      }
+    }
+    .card {
+      background: white;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 12px 50px rgba(0,0,0,0.2);
+      max-width: 480px;
+      width: 92%;
+      text-align: center;
+      z-index: 2;
+      padding-bottom: 20px;
+      position: relative;
+    }
+    .hero {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+    .content {
+      padding: 28px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      font-weight: normal;
+      color: #d6336c;
+    }
+    p {
+      color: #444;
+      margin-bottom: 16px;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    .soft {
+      font-size: 14px;
+      color: #777;
+      font-style: italic;
+    }
+    .people {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      margin: 18px 0;
+    }
+    .people img {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    button {
+      font-size: 17px;
+      padding: 12px 26px;
+      margin: 10px 6px;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    #yesBtn {
+      background: #ff69b4;
+      color: white;
+    }
+    #noBtn {
+      background: #ff4d6d;
+      color: white;
+    }
+    .options {
+      display: none;
+      margin-top: 18px;
+      position: relative;
+    }
+    .optionBtn {
+      background: #ff85b3;
+      color: white;
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+      border-radius: 12px;
+    }
+    /* Chocolate on right side */
+    .chocolate {
+      display: none;
+      position: fixed;
+      top: 50%;
+      right: 39px;
+      width: 400px;
+      text-align: center;
+      z-index: 3;
+      background: rgba(255, 255, 255, 0.85);
+      padding: 12px;
+      border-radius: 14px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+      transform: translateY(-50%);
+      opacity: 0;
+    }
+    .chocolate.show {
+      display: block;
+      opacity: 1;
+      animation: floatChocolate 4s ease-in-out infinite;
+    }
+    @keyframes floatChocolate {
+      0% { transform: translateY(-50%) translateX(0) rotate(-5deg); }
+      25% { transform: translateY(-52%) translateX(5px) rotate(5deg); }
+      50% { transform: translateY(-48%) translateX(-5px) rotate(-5deg); }
+      75% { transform: translateY(-51%) translateX(3px) rotate(3deg); }
+      100% { transform: translateY(-50%) translateX(0) rotate(0deg); }
+    }
+    .chocolate img {
+      width: 100%;
+      height: 35vh;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+    /* Tiny hidden audio player (helps bypass blocks) */
+    #ytMusic {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      width: 1px;
+      height: 1px;
+      opacity: 0.01;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- 🌸 Many flowers -->
+  <script>
+    const flowerEmojis = ["🌸","💐","🌺","🌷","🌻","🥀","🌼","🌹"];
+    for (let i = 0; i < 80; i++) {
+      const flower = document.createElement("div");
+      flower.className = "flower";
+      flower.textContent = flowerEmojis[Math.floor(Math.random()*flowerEmojis.length)];
+      flower.style.left = Math.random() * 100 + "vw";
+      flower.style.fontSize = 16 + Math.random() * 24 + "px";
+      flower.style.animationDuration = 5 + Math.random() * 6 + "s";
+      flower.style.opacity = 0.5 + Math.random() * 0.5;
+      document.body.appendChild(flower);
+    }
+  </script>
+
+  <!-- YouTube player container -->
+  <div id="ytMusic"></div>
+
+  <div class="card">
+    <img
+      src="https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=900&q=80"
+      alt="Evening ambience"
+      class="hero"
+    />
+    <div class="content">
+      <h1>🍽️ A Special Invitation</h1>
+      <p>
+        Jaber Nyiri, Nyamara, Yaa baby girl, Ajudo ,I guess I’m missing your beautiful face.
+      </p>
+      <p>
+        NyarKaocha, I understand your busy schedule, but I would absolutely love to have you join me at
+        <strong>HasGrill, Ngara</strong> on any of these days.
+        A relaxed evening with good food, smiles, and lighthearted conversation awaits.
+      </p>
+      <p class="soft">
+        Take your time, very samptuos simply choose what feels best for you, jaber.
+      </p>
+      <div class="people">
+        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" alt="Him">
+        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=300&q=80" alt="Her">
+      </div>
+      <button id="yesBtn">Yes</button>
+      <button id="noBtn">No</button>
+      <!-- Options -->
+      <div class="options" id="options">
+        <p><strong>What works best for you?</strong></p>
+        <button class="optionBtn" onclick="sendChoice('Tomorrow for supper')">
+          Tomorrow — Supper 🍽️
+        </button>
+        <button class="optionBtn" onclick="sendChoice('Friday night for a drink')">
+          Friday Night — Drink 🍷
+        </button>
+        <button class="optionBtn" onclick="sendChoice('Saturday night for a drink')">
+          Saturday Night — Drink 🍸
+        </button>
+      </div>
+      <!-- Chocolate popup -->
+      <div class="chocolate" id="chocolate">
+        <img src="https://images.unsplash.com/photo-1619848566843-9027f3c7aac2?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Chocolate">
+        <p>
+          Radiant daughter of Mumbi Macharia 🌸 — behold your chocolate 🍫,
+          a small token of sweetness to accompany your grace and charm.
+          I shall return after my duties, eagerly anticipating your luminous smile.
+          May this little indulgence bring a sparkle to your day, my enchanting Nyamara. ✨
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- YouTube IFrame API -->
+  <script src="https://www.youtube.com/iframe_api"></script>
+
+  <script>
+    let player;
+    let scale = 1;
+
+    // No button: make Yes bigger
+    document.getElementById("noBtn").addEventListener("click", () => {
+      scale += 0.35;
+      document.getElementById("yesBtn").style.transform = `scale(${scale})`;
+    });
+
+    // Yes button: show chocolate, start music, show options
+    document.getElementById("yesBtn").addEventListener("click", () => {
+      const chocolate = document.getElementById("chocolate");
+      chocolate.classList.add("show");
+
+      // Create and play YouTube audio player
+      if (!player) {
+        player = new YT.Player('ytMusic', {
+          height: '1',  // Tiny size to help browsers allow sound
+          width: '1',
+          videoId: '96bpvMCfBfo',  // Official Audio version (clean, no video)
+          playerVars: {
+            'autoplay': 1,
+            'loop': 1,
+            'playlist': '96bpvMCfBfo',  // Loop same audio
+            'controls': 0,
+            'showinfo': 0,
+            'rel': 0,
+            'modestbranding': 1,
+            'playsinline': 1
+          },
+          events: {
+            'onReady': function(event) {
+              console.log('Player ready - starting playback');
+              event.target.unMute();  // Ensure not muted
+              event.target.playVideo();
+            },
+            'onStateChange': function(event) {
+              console.log('Player state:', event.data);  // 1 = playing
+            },
+            'onError': function(event) {
+              console.error('YouTube error:', event.data);
+            }
+          }
+        });
+      } else {
+        player.unMute();
+        player.playVideo();
+      }
+
+      // Hide buttons, show options
+      document.getElementById("yesBtn").style.display = "none";
+      document.getElementById("noBtn").style.display = "none";
+      document.getElementById("options").style.display = "block";
+    });
+
+    function sendChoice(choice) {
+      const message = "I saw your invitation 😊 I’d like to choose: " + choice + ".";
+      const url = "https://wa.me/254713800378?text=" + encodeURIComponent(message);
+      window.location.href = url;
+    }
+  </script>
+</body>
+</html>
