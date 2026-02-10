@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>A Magical Invitation</title>
   <style>
   body {
@@ -14,7 +15,7 @@
     margin: 0;
     overflow-x: hidden;
     position: relative;
-    padding: 16px;
+    padding: 12px;
   }
 
   /* 🌸 Falling flowers */
@@ -36,45 +37,46 @@
 
   .card {
     background: white;
-    border-radius: 22px;
+    border-radius: 28px;
     overflow: hidden;
-    box-shadow: 0 12px 50px rgba(0,0,0,0.2);
-    max-width: 480px;
+    box-shadow: 0 12px 50px rgba(0,0,0,0.18);
+    max-width: 520px;
     width: 100%;
     text-align: center;
     z-index: 2;
-    padding-bottom: 20px;
-    position: relative;
+    padding-bottom: 32px;
+    /* position: relative; */
   }
 
   .hero {
     width: 100%;
-    height: clamp(180px, 40vw, 250px);
+    height: clamp(220px, 55vw, 320px);
     object-fit: cover;
   }
 
   .content {
-    padding: clamp(18px, 4vw, 28px);
+    padding: clamp(24px, 6vw, 40vw);
   }
 
   h1 {
-    margin: 0 0 14px;
+    margin: 0 0 20px;
     font-weight: normal;
     color: #d6336c;
-    font-size: clamp(22px, 5vw, 30px);
+    font-size: clamp(26px, 7.2vw, 38px);
   }
 
   p {
     color: #444;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
     font-size: clamp(14px, 3.5vw, 16px);
-    line-height: 1.6;
+    line-height: 1.65;
   }
 
   .soft {
     font-size: clamp(12px, 3vw, 14px);
     color: #777;
     font-style: italic;
+    line-height: 1.6;
   }
 
   .people {
@@ -86,8 +88,8 @@
   }
 
   .people img {
-    width: clamp(70px, 20vw, 90px);
-    height: clamp(70px, 20vw, 90px);
+    width: clamp(80px, 22vw, 110px);
+    height: clamp(80px, 22vw, 110px);
     border-radius: 50%;
     object-fit: cover;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
@@ -95,9 +97,9 @@
 
   button {
     font-size: clamp(15px, 4vw, 17px);
-    padding: 12px 26px;
+    padding: 14px 32px;
     margin: 10px 6px;
-    border-radius: 12px;
+    border-radius: 160px;
     border: none;
     cursor: pointer;
     transition: transform 0.3s ease;
@@ -117,8 +119,8 @@
 
   .options {
     display: none;
-    margin-top: 18px;
-    position: relative;
+    margin-top: 24px;
+    /* position: relative; */
   }
 
   .optionBtn {
@@ -126,8 +128,11 @@
     color: white;
     display: block;
     width: 100%;
-    margin: 10px 0;
-    border-radius: 12px;
+    margin: 14px 0;
+    border-radius: 16px;
+    padding: 16px 24px;           /* taller options */
+    font-size: clamp(16px, 4.3vw, 18px);
+    border-radius: 16px;
   }
 
   /* 🍫 Chocolate panel */
@@ -170,12 +175,23 @@
   /* 📱 Mobile adjustments */
   @media (max-width: 768px) {
     .chocolate {
-      position: static;
-      transform: none;
-      margin: 20px auto 0;
-      animation: none;
+        position: static;
+        transform: none;
+        margin: 28px auto 0;
+        width: 94%;
+        padding: 20px;
+        animation: none;
     }
-  }
+    
+    .chocolate img {
+        height: clamp(180px, 45vw, 280px);
+    }
+    
+    .chocolate p {
+        font-size: clamp(15px, 4vw, 17px);
+        line-height: 1.6;
+    }
+}
 
   /* 🎵 Hidden audio */
   #ytMusic {
@@ -222,7 +238,7 @@
       </p>
       <p>
         NyarKaocha, I understand your busy schedule, but I would absolutely love to have you join me at
-        <strong>HasGrill, Ngara</strong> on any of these days.
+        any of these days.
         A relaxed evening with good food, smiles, and lighthearted conversation awaits.
       </p>
       <p class="soft">
