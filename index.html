@@ -4,156 +4,191 @@
   <meta charset="UTF-8">
   <title>A Magical Invitation</title>
   <style>
-    body {
-      font-family: "Georgia", "Segoe UI", serif;
-      background: linear-gradient(180deg, #fff0f5, #ffe4e1);
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0;
-      overflow: hidden;
-      position: relative;
+  body {
+    font-family: "Georgia", "Segoe UI", serif;
+    background: linear-gradient(180deg, #fff0f5, #ffe4e1);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    overflow-x: hidden;
+    position: relative;
+    padding: 16px;
+  }
+
+  /* 🌸 Falling flowers */
+  .flower {
+    position: fixed;
+    top: -50px;
+    font-size: clamp(16px, 2vw, 22px);
+    animation: fall linear infinite;
+    opacity: 0.8;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  @keyframes fall {
+    to {
+      transform: translateY(110vh) rotate(360deg);
     }
-    /* 🌸 Falling flowers */
-    .flower {
-      position: fixed;
-      top: -50px;
-      font-size: 22px;
-      animation: fall linear infinite;
-      opacity: 0.8;
-      pointer-events: none;
-      z-index: 1;
-    }
-    @keyframes fall {
-      to {
-        transform: translateY(110vh) rotate(360deg);
-      }
-    }
-    .card {
-      background: white;
-      border-radius: 22px;
-      overflow: hidden;
-      box-shadow: 0 12px 50px rgba(0,0,0,0.2);
-      max-width: 480px;
-      width: 92%;
-      text-align: center;
-      z-index: 2;
-      padding-bottom: 20px;
-      position: relative;
-    }
-    .hero {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-    }
-    .content {
-      padding: 28px;
-    }
-    h1 {
-      margin: 0 0 14px;
-      font-weight: normal;
-      color: #d6336c;
-    }
-    p {
-      color: #444;
-      margin-bottom: 16px;
-      font-size: 16px;
-      line-height: 1.6;
-    }
-    .soft {
-      font-size: 14px;
-      color: #777;
-      font-style: italic;
-    }
-    .people {
-      display: flex;
-      justify-content: center;
-      gap: 14px;
-      margin: 18px 0;
-    }
-    .people img {
-      width: 90px;
-      height: 90px;
-      border-radius: 50%;
-      object-fit: cover;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    }
-    button {
-      font-size: 17px;
-      padding: 12px 26px;
-      margin: 10px 6px;
-      border-radius: 12px;
-      border: none;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-    }
-    #yesBtn {
-      background: #ff69b4;
-      color: white;
-    }
-    #noBtn {
-      background: #ff4d6d;
-      color: white;
-    }
-    .options {
-      display: none;
-      margin-top: 18px;
-      position: relative;
-    }
-    .optionBtn {
-      background: #ff85b3;
-      color: white;
-      display: block;
-      width: 100%;
-      margin: 10px 0;
-      border-radius: 12px;
-    }
-    /* Chocolate on right side */
+  }
+
+  .card {
+    background: white;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 12px 50px rgba(0,0,0,0.2);
+    max-width: 480px;
+    width: 100%;
+    text-align: center;
+    z-index: 2;
+    padding-bottom: 20px;
+    position: relative;
+  }
+
+  .hero {
+    width: 100%;
+    height: clamp(180px, 40vw, 250px);
+    object-fit: cover;
+  }
+
+  .content {
+    padding: clamp(18px, 4vw, 28px);
+  }
+
+  h1 {
+    margin: 0 0 14px;
+    font-weight: normal;
+    color: #d6336c;
+    font-size: clamp(22px, 5vw, 30px);
+  }
+
+  p {
+    color: #444;
+    margin-bottom: 16px;
+    font-size: clamp(14px, 3.5vw, 16px);
+    line-height: 1.6;
+  }
+
+  .soft {
+    font-size: clamp(12px, 3vw, 14px);
+    color: #777;
+    font-style: italic;
+  }
+
+  .people {
+    display: flex;
+    justify-content: center;
+    gap: clamp(10px, 3vw, 14px);
+    margin: 18px 0;
+    flex-wrap: wrap;
+  }
+
+  .people img {
+    width: clamp(70px, 20vw, 90px);
+    height: clamp(70px, 20vw, 90px);
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+
+  button {
+    font-size: clamp(15px, 4vw, 17px);
+    padding: 12px 26px;
+    margin: 10px 6px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    width: auto;
+    max-width: 100%;
+  }
+
+  #yesBtn {
+    background: #ff69b4;
+    color: white;
+  }
+
+  #noBtn {
+    background: #ff4d6d;
+    color: white;
+  }
+
+  .options {
+    display: none;
+    margin-top: 18px;
+    position: relative;
+  }
+
+  .optionBtn {
+    background: #ff85b3;
+    color: white;
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    border-radius: 12px;
+  }
+
+  /* 🍫 Chocolate panel */
+  .chocolate {
+    display: none;
+    position: fixed;
+    top: 50%;
+    right: 24px;
+    width: min(400px, 90vw);
+    text-align: center;
+    z-index: 3;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 12px;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+
+  .chocolate.show {
+    display: block;
+    opacity: 1;
+    animation: floatChocolate 4s ease-in-out infinite;
+  }
+
+  @keyframes floatChocolate {
+    0% { transform: translateY(-50%) rotate(-5deg); }
+    50% { transform: translateY(-48%) rotate(5deg); }
+    100% { transform: translateY(-50%) rotate(0deg); }
+  }
+
+  .chocolate img {
+    width: 100%;
+    height: clamp(200px, 35vh, 320px);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    object-fit: cover;
+  }
+
+  /* 📱 Mobile adjustments */
+  @media (max-width: 768px) {
     .chocolate {
-      display: none;
-      position: fixed;
-      top: 50%;
-      right: 39px;
-      width: 400px;
-      text-align: center;
-      z-index: 3;
-      background: rgba(255, 255, 255, 0.85);
-      padding: 12px;
-      border-radius: 14px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-      transform: translateY(-50%);
-      opacity: 0;
+      position: static;
+      transform: none;
+      margin: 20px auto 0;
+      animation: none;
     }
-    .chocolate.show {
-      display: block;
-      opacity: 1;
-      animation: floatChocolate 4s ease-in-out infinite;
-    }
-    @keyframes floatChocolate {
-      0% { transform: translateY(-50%) translateX(0) rotate(-5deg); }
-      25% { transform: translateY(-52%) translateX(5px) rotate(5deg); }
-      50% { transform: translateY(-48%) translateX(-5px) rotate(-5deg); }
-      75% { transform: translateY(-51%) translateX(3px) rotate(3deg); }
-      100% { transform: translateY(-50%) translateX(0) rotate(0deg); }
-    }
-    .chocolate img {
-      width: 100%;
-      height: 35vh;
-      border-radius: 10px;
-      margin-bottom: 10px;
-    }
-    /* Tiny hidden audio player (helps bypass blocks) */
-    #ytMusic {
-      position: fixed;
-      bottom: 0;
-      right: 0;
-      width: 1px;
-      height: 1px;
-      opacity: 0.01;
-      pointer-events: none;
-    }
-  </style>
+  }
+
+  /* 🎵 Hidden audio */
+  #ytMusic {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 1px;
+    height: 1px;
+    opacity: 0.01;
+    pointer-events: none;
+  }
+</style>
+
 </head>
 <body>
   <!-- 🌸 Many flowers -->
