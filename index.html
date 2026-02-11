@@ -55,7 +55,7 @@
   }
 
   .content {
-    padding: clamp(24px, 6vw, 40vw);
+    padding: clamp(18pxx, 6vw, 40vw);
   }
 
   h1 {
@@ -173,24 +173,69 @@
   }
 
   /* 📱 Mobile adjustments */
-  @media (max-width: 768px) {
-    .chocolate {
-        position: static;
-        transform: none;
-        margin: 28px auto 0;
-        width: 94%;
-        padding: 20px;
-        animation: none;
-    }
-    
-    .chocolate img {
-        height: clamp(180px, 45vw, 280px);
-    }
-    
-    .chocolate p {
-        font-size: clamp(15px, 4vw, 17px);
-        line-height: 1.6;
-    }
+ @media (max-width: 768px) {
+
+  .chocolate {
+    position: static;
+    transform: none;
+    width: 100%;
+    margin: 24px auto 0;
+    padding: 16px;
+    border-radius: 18px;
+    animation: none;
+  }
+
+  .chocolate img {
+    height: 200px;
+    border-radius: 14px;
+  }
+
+  .chocolate p {
+    font-size: 15px;
+    line-height: 1.7;
+    padding: 6px 4px;
+  }
+}
+
+
+@media (max-width: 768px) {
+
+  body {
+    padding: 10px;
+  }
+
+  .card {
+    border-radius: 20px;
+    padding-bottom: 20px;
+  }
+
+  h1 {
+    font-size: clamp(22px, 6.5vw, 30px);
+  }
+
+  p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+}
+@media (max-width: 768px) {
+
+  .people img {
+    width: 90px;
+    height: 90px;
+  }
+
+  button {
+    width: 100%;
+    max-width: 320px;
+    margin: 8px auto;
+    display: block;
+  }
+
+  .optionBtn {
+    font-size: 16px;
+    padding: 14px 18px;
+  }
 }
 
   /* 🎵 Hidden audio */
